@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Agendamento</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 id="titulo-barbearia">Sistema de Agendamento</h1>
+      <p>Escolha barbeiro, serviço, data e horário</p>
+
+      <!-- ETAPA 1 -->
+      <div id="step-barbeiro" class="step">
+        <h2>Escolha o barbeiro</h2>
+        <div class="barbeiros-container">
+          <!-- GERADO VIA JS -->
+        </div>
+        <button class="next-btn" onclick="nextStep('barbeiro')">Próximo</button>
+      </div>
+
+      <!-- ETAPA 2 -->
+      <div id="step-servico" class="step hidden">
+        <h2>Escolha o serviço</h2>
+        <div class="servicos-container">
+          <!-- GERADO VIA JS -->
+        </div>
+        <button class="next-btn" onclick="nextStep('servico')">Próximo</button>
+      </div>
+
+      <!-- ETAPA 3 -->
+      <div id="step-data" class="step hidden">
+        <h2>Escolha a data</h2>
+        <input type="date" id="data" class="data-input" />
+        <button class="next-btn" onclick="nextStep('data')">Próximo</button>
+      </div>
+
+      <!-- ETAPA 4 -->
+      <div id="step-horario" class="step hidden">
+        <h2>Escolha o horário</h2>
+        <div class="horarios-container">
+          <!-- GERADO VIA JS -->
+        </div>
+        <button class="next-btn" onclick="nextStep('horario')">Próximo</button>
+      </div>
+
+      <!-- ETAPA 5 -->
+      <div id="step-confirm" class="step hidden">
+        <h2>Confirme seu agendamento</h2>
+
+        <div id="resumo" class="resumo-card"></div>
+
+        <div class="form-group">
+          <label>Seu nome:</label>
+          <input type="text" id="nome" class="form-input" />
+        </div>
+
+        <div class="form-group">
+          <label>Seu WhatsApp:</label>
+          <input type="tel" id="telefone" class="form-input" />
+        </div>
+
+        <button class="finalizar-btn" onclick="finalizar()">
+          📱 Finalizar e enviar WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
